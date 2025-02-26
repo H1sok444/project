@@ -707,49 +707,48 @@
 
     <script>
       $(document).ready(function () {
-        // Fade-in animation for the "Program Details" section
+  
         $(".fade-in").each(function (index) {
           $(this)
-            .css("opacity", 0) // Start with opacity 0
-            .delay(200 * index) // Delay each element for a staggered effect
-            .animate({ opacity: 1 }, 1000); // Fade in over 1 second
+            .css("opacity", 0)
+            .delay(200 * index)
+            .animate({ opacity: 1 }, 1000); 
         });
-    
-        // Slide-in animation for the "Strategy Components" section
+
         $(".slide-in-left").each(function (index) {
           $(this)
-            .css({ opacity: 0, marginLeft: "-100px" }) // Start off-screen to the left
-            .delay(200 * index) // Delay each element for a staggered effect
-            .animate({ opacity: 1, marginLeft: "0" }, 1000); // Slide in from the left
+            .css({ opacity: 0, marginLeft: "-100px" }) 
+            .delay(200 * index) 
+            .animate({ opacity: 1, marginLeft: "0" }, 1000);
         });
     
         $(".slide-in-right").each(function (index) {
           $(this)
-            .css({ opacity: 0, marginRight: "-100px" }) // Start off-screen to the right
-            .delay(200 * index) // Delay each element for a staggered effect
-            .animate({ opacity: 1, marginRight: "0" }, 1000); // Slide in from the right
+            .css({ opacity: 0, marginRight: "-100px" })
+            .delay(200 * index) 
+            .animate({ opacity: 1, marginRight: "0" }, 1000); 
         });
     
-        // Hover effect for images in the "Strategy Components" section
+   
         $(".hover-grow").hover(
           function () {
-            $(this).animate({ scale: "1.05" }, 300); // Grow on hover
+            $(this).animate({ scale: "1.05" }, 300); 
           },
           function () {
-            $(this).animate({ scale: "1" }, 300); // Return to normal size
+            $(this).animate({ scale: "1" }, 300); 
           }
         );
     
-        // Scroll-triggered animations
+     
         $(window).scroll(function () {
           $(".scroll-animate").each(function () {
             const elementTop = $(this).offset().top;
             const windowBottom = $(window).scrollTop() + $(window).height();
             if (elementTop < windowBottom && !$(this).hasClass("animate")) {
               $(this)
-                .css({ opacity: 0, marginTop: "20px" }) // Start hidden and slightly below
-                .animate({ opacity: 1, marginTop: "0" }, 1000) // Fade in and slide up
-                .addClass("animate"); // Mark as animated
+                .css({ opacity: 0, marginTop: "20px" }) 
+                .animate({ opacity: 1, marginTop: "0" }, 1000) 
+                .addClass("animate"); 
             }
           });
         });
